@@ -1,5 +1,13 @@
 {
-  "name": "LikeDreamwalker's Engineering Skills",
-  "description": "Personal Claude Code skills by LikeDreamwalker — canonical reference implementations for React Router, Next.js, and Tauri",
-  "version": "1.0.0"
+  "name": "like-dreamwalker-skills",
+  "owner": {
+    "name": "LikeDreamwalker",
+    "email": "like-dreamwalker@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "engineering-skills",
+      "path": "."
+    }
+  ]
 }
