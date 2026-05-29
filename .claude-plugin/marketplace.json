@@ -1,13 +1,14 @@
 {
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
   "name": "like-dreamwalker-skills",
   "owner": {
-    "name": "LikeDreamwalker",
-    "email": "like-dreamwalker@users.noreply.github.com"
+    "name": "LikeDreamwalker"
   },
   "plugins": [
     {
       "name": "engineering-skills",
-      "path": "."
+      "source": "./",
+      "description": "Canonical reference implementations for React Router, Next.js, and Tauri"
     }
   ]
 }
