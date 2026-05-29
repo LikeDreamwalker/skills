@@ -2,9 +2,7 @@
   "name": "engineering-skills",
   "description": "Canonical reference implementations for React Router, Next.js, and Tauri. Complements CLAUDE.md with production-grade code patterns.",
   "version": "1.0.0",
-  "skills": [
-    "skills/react-router/SKILL.md",
-    "skills/nextjs/SKILL.md",
-    "skills/tauri/SKILL.md"
-  ]
+  "author": {
+    "name": "LikeDreamwalker"
+  }
 }
