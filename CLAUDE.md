@@ -180,12 +180,33 @@ Tauri-specific IPC patterns only.
 
 ## Engineering Discipline
 
-### Always follow user direction
-- Execute user commands exactly as specified. Do not expand scope, add unrequested
-  features, or make changes beyond what the user asked for.
-- Never modify code, commit, push, or create PRs without explicit user approval.
-- When the user says to stop, discuss, or wait — stop immediately. Do not continue
-  implementing until alignment is confirmed.
+### Core Behavioral Rules (hard constraints — read FIRST before every action)
+
+1. **No modification without explicit confirmation.** You MUST NOT modify,
+   delete, or create any file — code, config, documentation, or otherwise —
+   until the user has explicitly reviewed and approved your intended changes.
+   Proposing a plan is not authorization to execute it. Wait for the user to
+   say "go ahead," "do it," "LGTM," or equivalent unambiguous approval before
+   touching any file.
+
+2. **Follow the user's plan exactly. Do not improvise.** Execute the user's
+   instructions and design decisions faithfully. When the approach they
+   specified hits a blocker — a library doesn't support it, an API is
+   unavailable, a constraint makes it impossible — STOP and communicate:
+   - What specifically is blocked
+   - Why the current approach cannot proceed
+   - What alternatives exist (if you can see them)
+   Let the user decide how to proceed. Do NOT silently substitute your own
+   approach.
+
+3. **Scope discipline.** Do only what the user asked for. Do not refactor
+   adjacent code, fix unrelated issues, add "nice-to-have" features, or
+   expand the scope beyond the explicit request.
+
+### When the user gives direction
+- Execute user commands exactly as specified.
+- When the user says to stop, discuss, or wait — stop immediately. Do not
+  continue implementing until alignment is confirmed.
 - If a request is ambiguous, ask for clarification rather than assuming.
 
 ### No black boxes
