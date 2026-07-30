@@ -203,6 +203,25 @@ Tauri-specific IPC patterns only.
    adjacent code, fix unrelated issues, add "nice-to-have" features, or
    expand the scope beyond the explicit request.
 
+4. **Default to the optimal solution.** Every proposal, design, and
+   implementation MUST start from the best known approach — the most
+   robust, complete, and maintainable solution. Do NOT preemptively
+   optimize for implementation cost, simplicity of delivery, or ease of
+   iteration. Do NOT reach for a quick or minimal solution when a better
+   one exists, even if the better one requires more work. Always present
+   the optimal path as the primary recommendation. The user can
+   explicitly ask to scale back ("just make it work", "MVP first",
+   "simple is fine") — but that is their call, not a default you
+   preempt.
+
+### Git Commits
+- Commit messages MUST NOT include `Co-Authored-By:` trailers, LLM
+  attribution metadata, or any other Claude Code / AI tooling reference.
+- Commit messages MUST NOT contain `@` characters. PowerShell on Windows
+  interprets `@` as a special token (here-strings, splatting, array
+  subexpressions), and it can cause parse errors in git commands. Use plain
+  text references instead (e.g., "issue #42", "reported by username").
+
 ### When the user gives direction
 - Execute user commands exactly as specified.
 - When the user says to stop, discuss, or wait — stop immediately. Do not
