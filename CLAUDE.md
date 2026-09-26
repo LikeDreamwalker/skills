@@ -152,6 +152,23 @@ Tauri-specific IPC patterns only.
   behaviour a CSS rule could express. Even for a dynamic value, prefer writing a
   CSS variable from JS (`style={{ "--x": value }}`) and letting CSS own the
   styling, so layout stays in CSS rather than in the component.
+- **Tailwind utilities are written where the markup is — they are atomic, so
+  aggregating them is not an abstraction.** Prefer the vocabulary Tailwind and the
+  project's `@theme` tokens already give you; never build a second naming layer
+  over it.
+  - Do NOT bind a class string to a JS identifier (`const INK = "text-foreground"`,
+    `const PULSE = "animate-pulse motion-reduce:animate-none"`) and do NOT collect
+    atomic classes into a local table. A name that says nothing the class does not
+    already say buys nothing and hides the class from search.
+  - Do NOT interpolate a variant prefix or a class fragment (a `hover:` + `${X}`
+    template, a `bg-${tone}-500`): the resulting name exists in no source file, so
+    Tailwind never generates it and the style dies silently, with no error and no
+    trace. Interpolate whole class literals only.
+  - "It renders the same" is not a defence. A pattern is wrong because it is
+    wrong, not because its damage is currently invisible on screen.
+  - Exceptions: a table keyed by a real semantic state (a `Record<Status, string>`
+    variant map), and `src/components/ui/**`, which keeps shadcn's own upstream
+    convention.
 
 ### Responsive
 - Every layout MUST implement `sm` / `md` / `lg` / `xl` breakpoints in
