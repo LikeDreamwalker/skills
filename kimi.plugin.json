@@ -1,0 +1,29 @@
+{
+  "name": "engineering-skills",
+  "version": "1.0.0",
+  "description": "Non-negotiable engineering rules plus canonical reference implementations for Next.js, React Router and Tauri. Dual-installable: Claude Code reads .claude-plugin/, Kimi Code CLI reads this manifest.",
+  "keywords": [
+    "engineering-rules",
+    "code-style",
+    "nextjs",
+    "react-router",
+    "tauri"
+  ],
+  "author": {
+    "name": "LikeDreamwalker"
+  },
+  "homepage": "https://github.com/LikeDreamwalker/skills",
+  "license": "MIT",
+  "interface": {
+    "displayName": "Engineering Skills",
+    "shortDescription": "Always-on engineering rules plus Next.js / React Router / Tauri references",
+    "longDescription": "CLAUDE.md holds the non-negotiable rules (Tailwind tokens only, no arbitrary values, no inline styles, responsive layouts, i18n, verification discipline) and is injected into the system prompt while this plugin is enabled. The three reference skills are ordinary Agent Skills and are invoked with the Skill tool.",
+    "developerName": "LikeDreamwalker",
+    "websiteURL": "https://github.com/LikeDreamwalker/skills"
+  },
+  "skills": "./skills/",
+  "systemPromptPath": "./CLAUDE.md",
+  "sessionStart": {
+    "skill": "kimi-code"
+  }
+}
