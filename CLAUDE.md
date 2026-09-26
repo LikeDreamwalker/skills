@@ -145,6 +145,13 @@ Tauri-specific IPC patterns only.
   | 16px | 4 | | 40px | 10 | | 96px | 24 |
 - Use existing Tailwind config tokens and CSS variables from `tailwind.config`
   before defining new values.
+- **Static values MUST live in CSS.** An existing Tailwind token first, then a CSS
+  variable; inline `style` is reserved for values that genuinely come from JS at
+  render time (measurements, animation progress, values from state). A static
+  number, size or colour written into `style={{ … }}` is FORBIDDEN, and so is any
+  behaviour a CSS rule could express. Even for a dynamic value, prefer writing a
+  CSS variable from JS (`style={{ "--x": value }}`) and letting CSS own the
+  styling, so layout stays in CSS rather than in the component.
 
 ### Responsive
 - Every layout MUST implement `sm` / `md` / `lg` / `xl` breakpoints in
